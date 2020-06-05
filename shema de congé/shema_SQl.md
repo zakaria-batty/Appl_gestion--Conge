@@ -45,11 +45,9 @@ CREATE TABLE `employe`
  `date-de-naissance` date NOT NULL ,
 
 PRIMARY KEY (`id`),
-KEY `fkIdx_35` (`id_auth`),
-CONSTRAINT `FK_35` FOREIGN KEY `fkIdx_35` (`id_auth`) REFERENCES `auth` (`id`),
-KEY `fkIdx_43` (`id_service`),
-CONSTRAINT `FK_43` FOREIGN KEY `fkIdx_43` (`id_service`) REFERENCES `service` (`id`)
-);
+CONSTRAINT `auth_1` FOREIGN KEY (`id_auth`) REFERENCES `auth` (`id`),
+CONSTRAINT `service_1` FOREIGN KEY (`id_service`) REFERENCES `service` (`id`)
+)ENGINE = INNER;
 
 ```
 
@@ -66,8 +64,43 @@ CREATE TABLE `demande_conge`
  `statut`       varchar(45) NOT NULL ,
 
 PRIMARY KEY (`id`),
-KEY `fkIdx_53` (`id_employe`),
-CONSTRAINT `FK_53` FOREIGN KEY `fkIdx_53` (`id_employe`) REFERENCES `employe` (`id`)
-);
+CONSTRAINT `conge_1` FOREIGN KEY  (`id_employe`) REFERENCES `employe` (`id`)
+)ENGINE = INNER;
+
+```
+## INSERT VALUE
+
+```sql
+INSERT INTO auth ( email, password)
+   VALUES ('zakaria@gmail.com','zakara123'),
+    ('amine@gmail.com','amine123'),
+    ('ayoub@gmail.com','ayoub123'),	   
+    ('dounia@gmail.com','dounia123'),
+    ('akram@gmail.com','akram123');
+```
+```sql
+
+INSERT INTO service ( libelle)
+   VALUES ('resumé'),
+    ('resumé'),
+    ('resumé'),	   
+    ('resumé'),
+    ('resumé');
+```
+```sql
+INSERT INTO employe (nom,prenom,CIN,Tel,email,grade,salaire,date_embauche,sexe,id_auth,id_service,matricule,date_de_naissance)
+VALUES      ('zakaria','batty','HA:10011',0687904633,'zakaria@gmail.com','lv1',1500.5,01012020,'m',2,1,100100,01021997),
+ ('amine','elachari','HA:20022',0602316795,'amine@gmail.com','lv2',2100,02022020,'m',2,2,200200,01031997),
+ ('ayoub','rwiha','HA:30033',0638458545,'ayoub@gmail.com','lv1',1100.7,02122019,'m',1,3,300300,01121995),
+ ('dounia','ycd','HA:40044',0644904644,'dounia@gmail.com','lv3',2300.5,10112019,'f',2,1,400400,01121998),
+ ('akram','ettayfi','HA:50055',0698880222,'akram@gmail.com','lv2',1200.5,15112019,'m',3,1,500500,01111997);
+```
+```sql
+INSERT INTO demande_conge ( date_début,date_fin,number_jours,id_employe,type-conge,liste_de_conge)
+   VALUES ( '01-06-2020','15-06-2020',15,25,'Conge annuel','attendre'),
+          ( '01-06-2020','15-06-2020',15,24,'Conge annuel','attendre'),
+          ( '01-05-2020','05-07-2020',20,23,'Conge exceptionnel ou permissions d’absence','attendre'),	   
+          ( '01-06-2020','15-06-2020',10,22,'conge demaladie','attendre'),
+          ( '01-07-2020','15-10-2020',20,25,'Maternité 14 semaines','attendre');
 
 ```
