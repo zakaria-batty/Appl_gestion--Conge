@@ -78,6 +78,14 @@ INSERT INTO auth ( email, password)
     ('dounia@gmail.com','dounia123'),
     ('akram@gmail.com','akram123');
 ```
+| id | email             | password  |
+|:--:|:------------------|:----------|
+|  1 | zakaria@gmail.com | zakara123 |
+|  2 | amine@gmail.com   | amine123  |
+|  3 | ayoub@gmail.com   | ayoub123  |
+|  4 | dounia@gmail.com  | dounia123 |
+|  5 | akram@gmail.com   | akram123  |
+
 ```sql
 
 INSERT INTO service ( libelle)
@@ -95,6 +103,8 @@ VALUES      ('zakaria','batty','HA:10011',0687904633,'zakaria@gmail.com','lv1',1
  ('dounia','ycd','HA:40044',0644904644,'dounia@gmail.com','lv3',2300.5,10112019,'f',2,1,400400,01121998),
  ('akram','ettayfi','HA:50055',0698880222,'akram@gmail.com','lv2',1200.5,15112019,'m',3,1,500500,01111997);
 ```
+
+
 ```sql
 INSERT INTO demande_conge ( date_début,date_fin,number_jours,id_employe,type-conge,liste_de_conge)
    VALUES ( '01-06-2020','15-06-2020',15,25,'Conge annuel','attendre'),
@@ -104,3 +114,10 @@ INSERT INTO demande_conge ( date_début,date_fin,number_jours,id_employe,type-co
           ( '01-07-2020','15-10-2020',20,25,'Maternité 14 semaines','attendre');
 
 ```
+| id | date_début  | date_fin   | number_jours | id_employe | type_conge                                    | liste_de_conge |
+|:--:|:-----------:|:----------:|:------------:|:----------:|:----------------------------------------------|:---------------|
+| 41 | 01-06-2020  | 15-06-2020 |           15 |         25 | Conge annuel                                  | attendre       |
+| 42 | 01-06-2020  | 15-06-2020 |           15 |         24 | Conge annuel                                  | attendre       |
+| 43 | 01-05-2020  | 05-07-2020 |           20 |         23 | Conge exceptionnel ou permissions dÔÇÖabsence | attendre       |
+| 44 | 01-06-2020  | 15-06-2020 |           10 |         22 | conge demaladie                               | attendre       |
+| 45 | 01-07-2020  | 15-10-2020 |           20 |         25 | Maternit├® 14 semaines                        | attendre       |
