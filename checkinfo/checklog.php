@@ -32,8 +32,8 @@ endif;
 
 
 // check the information admin
-$useradmin = isset($_POST['username']) ? $_POST['username'] : NULL;
-$pass = isset($_POST['password']) ? $_POST['password'] : NULL;
+ $useradmin = isset($_POST['username']) ? $_POST['username'] : NULL;
+ $pass = isset($_POST['password']) ? $_POST['password'] : NULL;
 
 $query = mysqli_query($connect, " SELECT id FROM employe WHERE prenom = '$useradmin' && id_service = 6 && matricule = '$pass' ");
 $rows = mysqli_num_rows($query);

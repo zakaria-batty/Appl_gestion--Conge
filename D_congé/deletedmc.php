@@ -1,5 +1,5 @@
 <?php
-include("./checkinfo/connect.php");
+include("../checkinfo/connect.php");
 function emp_delete($connect, $id)
 {
     $query = "DELETE FROM demande_conge WHERE id = '$id'";

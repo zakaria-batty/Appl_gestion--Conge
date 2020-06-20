@@ -18,7 +18,7 @@ include("./checkinfo/connect.php");
     <!-- --header-- -->
     <header>
         <span class="profil">
-            <h1 profil__user>Bonjour M. <?php echo  $_SESSION['username']; ?></h1>
+            <h1 profil__user>Bonjour . <?php echo  $_SESSION['username']; ?></h1>
             <img src="dist/img/employée.jpg" alt="photo">
         </span>
         <hr>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 19 juin 2020 à 00:25
+-- Généré le : sam. 20 juin 2020 à 15:42
 -- Version du serveur :  10.4.11-MariaDB
 -- Version de PHP : 7.4.5
 
@@ -38,15 +38,6 @@ CREATE TABLE `demande_conge` (
   `demande` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Déchargement des données de la table `demande_conge`
---
-
-INSERT INTO `demande_conge` (`id`, `date_début`, `date_fin`, `durée`, `id_employe`, `id_type_conge`, `id_service`, `demande`) VALUES
-(42, '2020-06-01', '2020-06-18', 18, 77, 2, 7, 'accepter'),
-(43, '2020-06-01', '2020-06-18', 18, 77, 2, 7, 'accepter'),
-(44, '2020-06-01', '2020-06-16', 17, 77, 2, 8, 'accepter');
-
 -- --------------------------------------------------------
 
 --
@@ -71,8 +62,7 @@ CREATE TABLE `employe` (
 --
 
 INSERT INTO `employe` (`id`, `nom`, `prenom`, `CIN`, `Tel`, `email`, `date_embauche`, `id_service`, `matricule`, `date_de_naissance`) VALUES
-(76, 'batty', 'zakaria', 'HA:208445', 687904633, 'zakaria@gmail.com', '2020-06-18', 6, 0, '1997-12-09'),
-(77, 'elachari', 'amine', 'HA:10025', 977251413, 'amine@gmail.com', '2020-06-01', 8, 200200, '1997-01-01');
+(76, 'batty', 'zakaria', 'HA:208445', 687904633, 'zakaria@gmail.com', '2020-06-18', 6, 100100, '1997-12-09');
 
 -- --------------------------------------------------------
 
@@ -191,13 +181,13 @@ ALTER TABLE `type_conge`
 -- AUTO_INCREMENT pour la table `demande_conge`
 --
 ALTER TABLE `demande_conge`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT pour la table `employe`
 --
 ALTER TABLE `employe`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
 
 --
 -- AUTO_INCREMENT pour la table `service`
