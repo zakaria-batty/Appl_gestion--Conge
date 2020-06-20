@@ -1,7 +1,7 @@
 <?php
 include("include/header.php");
 include("include/navadmin.php");
-function emp_get($connect)
+function emp_getdmc($connect)
 {
     $query = "SELECT * FROM demande_conge";
     $result = mysqli_query($connect, $query);
@@ -11,16 +11,21 @@ function emp_get($connect)
         return false;
     endif;
 }
-$result = emp_get($connect);
-// die(print_r($result));
+$result = emp_getdmc($connect);
 ?>
 <div class="container">
     <div class="container__row">
         <div class="container__col">
             <div class="container__card">
                 <div class="container__body">
-                        <?php if (isset($_GET['message']) && $_GET['message']=='checked') :
-                            echo "<p id='msg'>La demande de congé a été acceptée<p>";
+                        <?php if (isset($_GET['message']) && $_GET['message']=='supprimer') :
+                            echo "<p id='msg'>le demande congé a été supprimé avec succès<p>";
+                            elseif (isset($_GET['message']) && $_GET['message'] == 'refused') :
+                                echo "<p id='msg'>le demande congé a été refuse avec succès<p>";
+                                elseif (isset($_GET['message']) && $_GET['message'] == 'accepter') :
+                                    echo "<p id='msg'>La demande de congé a été acceptée<p>";
+                                    elseif (isset($_GET['message']) && $_GET['message'] == 'err') :
+                                        echo "<p id='msg'>Veuillez réessayer<p>";
                         endif;
                         ?>
                     <table class="container__table">
@@ -46,7 +51,7 @@ $result = emp_get($connect);
                                     <td><?php echo $row['id_employe']; ?></td>
                                     <td><?php echo $row['id_type_conge']; ?></td>
                                     <td><?php echo $row['id_service']; ?></td>
-                                    <td><a href="delete.php?id=<?php echo $row['id']; ?>" title="supprimer"><img src="dist/img/ikondelet.svg" style="width: 20px;"></a></td>
+                                    <td><a href="D_congé/deletedmc.php?id=<?php echo $row['id']; ?>" title="supprimer"><img src="dist/img/ikondelet.svg" style="width: 20px;"></a></td>
                                     <td><a href="D_congé/refuse.php?id=<?php echo $row['id']; ?>" title="refuse"><img src="dist/img/refuse.svg" style="width: 20px;"></a></td>
                                     <td><a href="D_congé/check.php?id=<?php echo $row['id']; ?>" title="accepter"><img src="dist/img/check.svg" style="width: 20px;"></a></td>
                                 </tr>

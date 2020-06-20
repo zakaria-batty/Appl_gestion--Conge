@@ -1,8 +1,8 @@
 <?php
-include("../checkinfo/connect.php");
-function emp_refuse($connect, $id)
+include("./checkinfo/connect.php");
+function emp_delete($connect, $id)
 {
-    $query = "UPDATE demande_conge SET demande = 'refuse' WHERE id = '$id' ";
+    $query = "DELETE FROM demande_conge WHERE id = '$id'";
     $result = mysqli_query($connect, $query);
     if ($result != null) :
         return $result;
@@ -15,8 +15,8 @@ function redirect($page)
     header('location:' . $page);
 }
 $id = $_GET['id'];
-if (emp_refuse($connect, $id)) :
-    header("location:../d_congé.php?message=refused");
+if (emp_delete($connect, $id)) :
+    header("location:../d_congé.php?message=supprimer");
 else :
     header("location:../d_congé.php?message=err");
 endif;

@@ -9,12 +9,10 @@ function emp_delete($connect, $id){
             return false;
         endif;
 }
-// function redirect($page)
-// {
-//     header('location:' . $page);
-// }
+
 $id = $_GET['id'];
 if (emp_delete($connect, $id)):
-//    redirect('./m_employe.php?message=deleted');
-     echo "<script> alert ('L'employé a été supprimé avec succès')</script>";
+       header("location:../m_employe.php?message=deleted");
+else:
+    header("location:../m_employe.php?message=err");
 endif;    

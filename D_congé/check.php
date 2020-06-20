@@ -17,8 +17,8 @@ function emp_accepter($connect, $id)
 }
 $id = $_GET['id'];
 if (emp_accepter($connect, $id)) :
-    // redirect('d_congé.php?message=checked');
-    echo "<script> alert ('La demande de congé a été acceptée')</script>";
-else:
- echo "<script> alert ('La demande de congé ')</script>";
+    header("location:../d_congé.php?message=accepter");
+    else :
+        header("location:../d_congé.php?message=err");
+
 endif;  

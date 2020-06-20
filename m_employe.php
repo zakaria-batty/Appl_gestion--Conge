@@ -27,7 +27,7 @@ $rslt = emp_get($connect);
                         echo "<p id='msg'>employé modifé avec succes<p>";
                     elseif (isset($_GET['message']) && $_GET['message'] == 'deleted') :
                         echo "<p id='msg'>employé supprimé avec succes<p>";
-                    elseif (isset($_GET['message']) && $_GET['message'] == 'errdeleted') :
+                    elseif (isset($_GET['message']) && $_GET['message'] == 'err') :
                         echo "<p id='msg'>Veuillez réessayer<p>";
                     endif;
                     ?>
@@ -60,7 +60,7 @@ $rslt = emp_get($connect);
                                     <td><?php echo $row['id_service']; ?></td>
                                     <td><?php echo $row['matricule']; ?></td>
                                     <td><?php echo $row['date_de_naissance']; ?></td>
-                                    <td><a href="D_congé/delete.php?id=<?php echo $row['id']; ?>" title="delete"><img src="dist/img/ikondelet.svg" style="width: 20px;"></a></td>
+                                    <td><a href="D_congé/deletemp.php?id=<?php echo $row['id']; ?>" title="delete"><img src="dist/img/ikondelet.svg" style="width: 20px;"></a></td>
                                     <td><a href="D_congé/update.php?id=<?php echo $row['id']; ?>" title="update"><img src="dist/img/iconupdate.svg" style="width: 20px;"></a></td>
                                 </tr>
                             <?php

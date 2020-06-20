@@ -1,17 +1,7 @@
 <?php
 include("../checkinfo/connect.php");
 // function emp_insert($connect, $values = array())
-// {
-//     $params = "'" . implode("','", $values) . "'";
-//     $query = "INSERT INTO employe (nom,prenom,CIN,Tel,email,date_embauche,id_service,matricule,date_de_naissance)
-//               VALUES (" . $params . ")";
-//     // die($query);
-//     if (mysqli_query($connect, $query)) :
-//         return true;
-//     else :
-//         return false;
-//     endif;
-// }
+
 function get_imp_by_id($connect, $id)
 {
     $query = "SELECT * FROM employe WHERE id = '$id' ";

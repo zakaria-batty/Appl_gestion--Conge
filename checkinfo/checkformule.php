@@ -1,6 +1,6 @@
 <?php
 // include("./function.php");
-function emp_insert($connect, $values = array())
+function dmc_insert($connect, $values = array())
 {
     $params = "'" . implode("','", $values) . "'";
     $query = "INSERT INTO demande_conge (date_début,date_fin,durée,id_employe,id_type_conge,id_service,demande)
@@ -49,7 +49,7 @@ if (isset($_POST['ajouter'])) :
             'demande' => $demande,
         );
         //submit information
-        if (emp_insert($connect, $values) === true) :
+        if (dmc_insert($connect, $values) === true) :
         //    $message = '*le demande congé envoyez';
            redirect('voirconge.php?message=envoyez');
             //  echo "<script> alert ('le demande congé envoyez')</script>";
